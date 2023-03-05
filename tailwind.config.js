@@ -9,12 +9,13 @@ module.exports = {
       fontFamily: {
         Redhat: ["Red Hat Display", "sans-serif"],
         Mouse: ["Mouse Memoirs", "sans-serif"],
+        Poppins: ["Poppins", "sans-serif"],
+      },
+      colors: {
+        secondary: "#45CA00",
+        primary: "#050505"
       }
     },
-    colors: {
-      secondary: "#45CA00",
-      primary: "#050505"
-    }
   },
   plugins: [],
 }

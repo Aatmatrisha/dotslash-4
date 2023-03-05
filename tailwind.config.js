@@ -11,6 +11,10 @@ module.exports = {
         Mouse: ["Mouse Memoirs", "sans-serif"],
       }
     },
+    colors: {
+      secondary: "#45CA00",
+      primary: "#050505"
+    }
   },
   plugins: [],
 }

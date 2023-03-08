@@ -4,10 +4,25 @@ import Link from "next/link";
 import PesLogo from "../public/assets/pes_logo.svg";
 import AtLogo from "../public/assets/at_logo.svg";
 import BurgerIcon from "../public/assets/burger_icon.svg";
+import { useEffect, useState } from "react";
 
 export default function Nav() {
+
+    const [show, handleShow] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if(window.scrollY > 90) {
+                handleShow(true);
+            } else handleShow(false);
+        });
+        return () => {
+            window.removeEventListener("scroll", () => {});
+        } 
+    }, [])
+
     return (
-        <nav className="w-full flex flex-row h-[80px] fixed z-50">
+        <nav className={`w-full flex flex-row h-[80px] fixed z-50 ${show && "backdrop-blur-[20px]"}`}>
             <div className="hidden md:w-full md:h-full md:flex-row md:items-center md:flex md:flex-row md:items-center md:pl-[20px] md:pr-[20px] md:justify-between">
                 <Link className="h-full flex flex-col justify-center" href="/">
                     <Image className="h-[90%]" priority src={PesLogo} alt="PES University" />
